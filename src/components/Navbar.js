@@ -4,6 +4,7 @@ import { links } from "../utilities/links";
 import { Link } from "react-router-dom";
 import logo from "../images/pokemon.png";
 import CartButtons from "./CartButtons";
+import { BiMenu } from "react-icons/bi";
 
 const Navbar = () => {
   return (
@@ -13,6 +14,9 @@ const Navbar = () => {
           <Link to="/">
             <img src={logo} alt="pokemon logo" />
           </Link>
+          <button type="button" className="nav-toggle">
+            <BiMenu />
+          </button>
         </div>
         <ul className="links">
           {links.map((link) => {
@@ -37,6 +41,11 @@ const NavContainer = styled.div`
   justify-content: center;
   font-size: 2.5rem;
 
+  .nav-toggle {
+    background: transparent;
+    border: transparent;
+    cursor: pointer;
+  }
   .nav-center {
     display: flex;
     align-items: center;
@@ -52,6 +61,10 @@ const NavContainer = styled.div`
       padding-left: 2rem;
     }
   }
+  @media (min-width: 992px) {
+    .nav-toggle {
+      display: none;
+    }
 `;
 
 export default Navbar;
