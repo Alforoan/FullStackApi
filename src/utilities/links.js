@@ -3,17 +3,17 @@ import React from "react";
 export const links = [
   {
     id: 1,
-    text: "home",
+    text: "Home",
     url: "/",
   },
   {
     id: 2,
-    text: "about",
+    text: "About",
     url: "/about",
   },
   {
     id: 1,
-    text: "products",
-    url: "/products",
+    text: "Cards",
+    url: "/cards",
   },
 ];
