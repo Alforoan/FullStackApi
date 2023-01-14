@@ -13,8 +13,8 @@ function CartButtons() {
           <span className="cart-value">10</span>
         </span>
       </Link>
-      <button type="button">
-        Login <FaUserPlus />{" "}
+      <button type="button" className="login-btn">
+        Login <FaUserPlus className="login-icon" />
       </button>
     </Wrapper>
   );
@@ -52,6 +52,19 @@ const Wrapper = styled.div`
     background: orange;
     color: white;
     font-size: 1rem;
+  }
+  .login-btn {
+    background: transparent;
+    border: transparent;
+    font-size: 1.8rem;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    margin-left: 1rem;
+    padding-left: 0.5rem;
+  }
+  .login-icon {
+    padding-left: 0.3rem;
   }
 `;
 
