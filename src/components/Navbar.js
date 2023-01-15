@@ -61,10 +61,14 @@ const NavContainer = styled.div`
       padding-left: 2rem;
     }
   }
-  @media (min-width: 992px) {
+  @media screen and (max-width: 1000px) {
     .nav-toggle {
       display: none;
     }
+    .nav-center {
+      display: none;
+    }
+  }
 `;
 
 export default Navbar;
