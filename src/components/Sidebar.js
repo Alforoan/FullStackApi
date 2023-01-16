@@ -4,14 +4,21 @@ import { Link } from "react-router-dom";
 import styled from "styled-components";
 import { links } from "../utilities/links";
 import logo from "../images/pokemon.png";
+import { useCardsContext } from "../context/cards_context";
 
 function Sidebar() {
-  const isOpen = true;
+  const { isSidebarOpen, closeSidebar } = useCardsContext();
+
   return (
     <Wrapper>
-      <aside className={`${isOpen ? "sidebar show-sidebar" : "show-sidebar"}`}>
+      <aside
+        className={`${isSidebarOpen ? "sidebar show-sidebar" : "show-sidebar"}`}
+      >
         <div>
           <img src={logo} alt="pokemon" />
+          <button type="button" onClick={closeSidebar}>
+            Click here
+          </button>
         </div>
         <ul>
           {links.map((link) => {
