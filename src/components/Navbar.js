@@ -5,8 +5,10 @@ import { Link } from "react-router-dom";
 import logo from "../images/pokemon.png";
 import CartButtons from "./CartButtons";
 import { BiMenu } from "react-icons/bi";
+import { useCardsContext } from "../context/cards_context";
 
 const Navbar = () => {
+  const { openSidebar } = useCardsContext();
   return (
     <NavContainer>
       <div className="nav-center">
@@ -14,7 +16,7 @@ const Navbar = () => {
           <Link to="/">
             <img src={logo} alt="pokemon logo" />
           </Link>
-          <button type="button" className="nav-toggle">
+          <button type="button" className="nav-toggle" onClick={openSidebar}>
             <BiMenu />
           </button>
         </div>
