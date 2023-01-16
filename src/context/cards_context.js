@@ -8,7 +8,7 @@ const initialState = {
 
 const CardsContext = React.createContext();
 
-export const CardsProvider = ({ children }) => {
+const CardsProvider = ({ children }) => {
   const [state, dispatch] = React.useReducer(reducer, initialState);
   const openSidebar = () => {
     dispatch({ type: SIDEBAR_OPEN });
@@ -17,4 +17,16 @@ export const CardsProvider = ({ children }) => {
   const closeSidebar = () => {
     dispatch({ type: SIDEBAR_CLOSE });
   };
+
+  return (
+    <CardsContext.Provider value={{ ...state, openSidebar, closeSidebar }}>
+      {children}
+    </CardsContext.Provider>
+  );
 };
+
+export const useCardsContext = () => {
+  return React.useContext(CardsContext);
+};
+
+export default CardsProvider;
