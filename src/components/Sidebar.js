@@ -25,10 +25,17 @@ function Sidebar() {
             const { id, url, text } = link;
             return (
               <li key={id}>
-                <Link to={url}>{text}</Link>
+                <Link to={url} onClick={closeSidebar}>
+                  {text}
+                </Link>
               </li>
             );
           })}
+          <li>
+            <Link to="/checkout" onClick={closeSidebar}>
+              checkout
+            </Link>
+          </li>
         </ul>
         <CartButtons />
       </aside>
