@@ -6,7 +6,7 @@ import aboutImg from "../images/about.jpg";
 function AboutPage() {
   return (
     <main>
-      <PageHero />
+      <PageHero title="about" />
       <Wrapper>
         <img src={aboutImg} alt="nice pokemon" />
         <article>
