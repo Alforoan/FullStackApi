@@ -29,6 +29,10 @@ const Navbar = () => {
               </li>
             );
           })}
+
+          <li>
+            <Link to="/checkout">Checkout</Link>
+          </li>
         </ul>
         <div className="cart-btn-wrapper">
           <CartButtons />
