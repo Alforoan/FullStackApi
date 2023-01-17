@@ -7,6 +7,7 @@ import About from "./components/About";
 import Cards from "./components/Cards";
 import Footer from "./components/Footer";
 import Sidebar from "./components/Sidebar";
+import Error from "./pages/ErrorPage";
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
       <Sidebar />
       <Routes>
         <Route path="/" element={<Home />} />
+        <Route exact path="/*" element={<Error />} />
       </Routes>
       <Footer />
     </>
