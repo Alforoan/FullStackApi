@@ -12,7 +12,7 @@ const Navbar = () => {
   return (
     <NavContainer>
       <div className="nav-center">
-        <div>
+        <div className="nav-header">
           <Link to="/">
             <img src={logo} alt="pokemon logo" />
           </Link>
@@ -20,7 +20,7 @@ const Navbar = () => {
             <BiMenu />
           </button>
         </div>
-        <ul className="links">
+        <ul className="nav-links">
           {links.map((link) => {
             const { id, url, text } = link;
             return (
@@ -31,7 +31,9 @@ const Navbar = () => {
             );
           })}
         </ul>
-        <CartButtons />
+        <div className="cart-btn-wrapper">
+          <CartButtons />
+        </div>
       </div>
     </NavContainer>
   );
@@ -47,6 +49,7 @@ const NavContainer = styled.div`
     background: transparent;
     border: transparent;
     cursor: pointer;
+    font-size: 2rem;
   }
   .nav-center {
     display: flex;
@@ -56,19 +59,31 @@ const NavContainer = styled.div`
     margin: auto;
     max-width: 1150px;
   }
-  .links {
-    display: flex;
+  .nav-links {
+    display: none;
     list-style: none;
     li {
       padding-left: 2rem;
     }
   }
-  @media screen and (max-width: 1000px) {
+  .cart-btn-wrapper {
+    display: none;
+  }
+
+  @media (min-width: 1000px) {
     .nav-toggle {
       display: none;
     }
     .nav-center {
-      display: none;
+      display: flex;
+    }
+    .nav-links {
+      display: flex;
+      justify-content: center;
+    }
+    .cart-btn-wrapper {
+      display: flex;
+      justify-center: center;
     }
   }
 `;

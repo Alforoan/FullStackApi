@@ -5,6 +5,7 @@ import styled from "styled-components";
 import { links } from "../utilities/links";
 import logo from "../images/pokemon.png";
 import { useCardsContext } from "../context/cards_context";
+import { FaTimes } from "react-icons/fa";
 
 function Sidebar() {
   const { isSidebarOpen, closeSidebar } = useCardsContext();
@@ -12,12 +13,14 @@ function Sidebar() {
   return (
     <Wrapper>
       <aside
-        className={`${isSidebarOpen ? "sidebar show-sidebar" : "show-sidebar"}`}
+        className={`${
+          isSidebarOpen ? "sidebar show-sidebar" : "sidebar no-sidebar"
+        }`}
       >
-        <div>
-          <img src={logo} alt="pokemon" />
-          <button type="button" onClick={closeSidebar}>
-            Click here
+        <div className="sidebar-header">
+          <img src={logo} alt="pokemon" className="logo" />
+          <button className="close-btn" type="button" onClick={closeSidebar}>
+            <FaTimes />
           </button>
         </div>
         <ul>
@@ -44,20 +47,39 @@ function Sidebar() {
 }
 
 const Wrapper = styled.div`
+  text-align: center;
+
+  .sidebar-header {
+    justify-content: space-between;
+    align-items: center;
+  }
   .sidebar {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background: var(--clr-white);
-    transition: var(--transition);
-    transform: translate(-100%);
+    background: #fff;
+    transition: all 0.3s linear;
+    transform: all 0.3s linear;
     z-index: -1;
+  }
+  .close-btn {
+    font-size: 2rem;
+    background: transparent;
+    border-color: transparent;
+    color: var(--clr-primary-5);
+    transition: var(--transition);
+    cursor: pointer;
+    color: var(--clr-red-dark);
+    margin-top: 0.2rem;
   }
   .show-sidebar {
     transform: translate(0);
     z-index: 999;
+  }
+  .no-sidebar {
+    display: none;
   }
   @media screen and (min-width: 1000px) {
     .sidebar {
