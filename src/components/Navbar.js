@@ -25,8 +25,7 @@ const Navbar = () => {
             const { id, url, text } = link;
             return (
               <li key={id}>
-                <Link to={url} />
-                {text}
+                <Link to={url}>{text}</Link>
               </li>
             );
           })}
@@ -69,7 +68,9 @@ const NavContainer = styled.div`
   .cart-btn-wrapper {
     display: none;
   }
-
+  .nav-links a {
+    text-decoration: none;
+  }
   @media (min-width: 1000px) {
     .nav-toggle {
       display: none;
