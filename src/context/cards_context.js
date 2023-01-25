@@ -19,7 +19,7 @@ const initialState = {
 
 const CardsContext = React.createContext();
 
-const CardsProvider = ({ children }) => {
+export const CardsProvider = ({ children }) => {
   const [state, dispatch] = React.useReducer(reducer, initialState);
   const openSidebar = () => {
     dispatch({ type: SIDEBAR_OPEN });
@@ -32,12 +32,16 @@ const CardsProvider = ({ children }) => {
   const FetchCards = async () => {
     try {
       const response = await fetch(url);
-      const data = await response.json();
-      dispatch({ type: GET_CARDS_SUCCESS, payload: cards });
+      const cards = await response.json();
+      dispatch({ type: GET_CARDS_SUCCESS, payload: cards.data });
     } catch (error) {
       dispatch({ type: GET_CARDS_ERROR });
     }
   };
+
+  React.useEffect(() => {
+    FetchCards();
+  }, []);
 
   return (
     <CardsContext.Provider value={{ ...state, openSidebar, closeSidebar }}>
