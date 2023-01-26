@@ -31,6 +31,12 @@ const Wrapper = styled.div`
   .pokemon-name {
     text-align: center;
   }
+  .pokemon-image:hover {
+    -webkit-filter: brightness(65%);
+    transition: all 0.3s linear;
+    cursor: pointer;
+  }
+
   padding-right: 1rem;
   padding-left: 1rem;
 `;

@@ -23,10 +23,12 @@ function FeaturedCards() {
 const Wrapper = styled.div`
   text-align: center;
   margin-top: 3rem;
+  margin-bottom: 3rem;
   .pokemon-cards {
     display: flex;
     justify-content: center;
   }
+
   .featured-cards {
     margin-bottom: 3rem;
   }
