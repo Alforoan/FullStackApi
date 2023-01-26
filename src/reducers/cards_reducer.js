@@ -10,7 +10,7 @@ function cards_reducer(state, action) {
   }
   if (action.type === GET_CARDS_SUCCESS) {
     const featured_cards = action.payload.filter(
-      (card) => card.cardmarket.prices.averageSellPrice > 10
+      (card) => card.name.length > 10
     );
 
     return {
