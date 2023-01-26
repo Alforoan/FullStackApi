@@ -1,5 +1,7 @@
 import React from "react";
 import styled from "styled-components";
+import { Link } from "react-router-dom";
+import { FaSearch } from "react-icons/fa";
 function Card({
   id,
   name,
@@ -14,6 +16,9 @@ function Card({
         <div>
           <h3 className="pokemon-name">{name}</h3>
           <img className="pokemon-image" src={image} alt={name} />
+          <Link>
+            <FaSearch />
+          </Link>
         </div>
         <footer>
           <p>${price}</p>
