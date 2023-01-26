@@ -1,5 +1,11 @@
 import React from "react";
-import { SIDEBAR_OPEN, SIDEBAR_CLOSE, GET_CARDS_SUCCESS } from "../actions";
+import {
+  SIDEBAR_OPEN,
+  SIDEBAR_CLOSE,
+  GET_CARDS_SUCCESS,
+  GET_SINGLE_CARD_BEGIN,
+  GET_SINGLE_CARD_SUCCESS,
+} from "../actions";
 
 function cards_reducer(state, action) {
   if (action.type === SIDEBAR_OPEN) {
@@ -17,6 +23,12 @@ function cards_reducer(state, action) {
       ...state,
       cards: action.payload,
       featured_cards,
+    };
+  }
+  if (action.type === GET_SINGLE_CARD_SUCCESS) {
+    return {
+      ...state,
+      single_product: action.payload,
     };
   }
 }
