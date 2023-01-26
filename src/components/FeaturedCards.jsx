@@ -9,10 +9,10 @@ function FeaturedCards() {
   return (
     <Wrapper>
       <div>
-        <h2>Featured Cards</h2>
+        <h2 className="featured-cards">Featured Cards</h2>
       </div>
-      <div>
-        {name.slice(0, 6).map((card) => {
+      <div className="pokemon-cards">
+        {name.slice(0, 3).map((card) => {
           return <Card key={card.id} {...card} />;
         })}
       </div>
@@ -20,6 +20,16 @@ function FeaturedCards() {
   );
 }
 
-const Wrapper = styled.div``;
+const Wrapper = styled.div`
+  text-align: center;
+  margin-top: 3rem;
+  .pokemon-cards {
+    display: flex;
+    justify-content: center;
+  }
+  .featured-cards {
+    margin-bottom: 3rem;
+  }
+`;
 
 export default FeaturedCards;
