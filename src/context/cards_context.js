@@ -1,5 +1,6 @@
 import React from "react";
 import reducer from "../reducers/cards_reducer";
+import axios from "axios";
 import {
   SIDEBAR_CLOSE,
   SIDEBAR_OPEN,
@@ -7,8 +8,6 @@ import {
   GET_CARDS_SUCCESS,
   GET_CARDS_ERROR,
 } from "../actions";
-
-const url = "https://api.pokemontcg.io/v2/cards";
 
 const initialState = {
   isSidebarOpen: false,
@@ -18,7 +17,7 @@ const initialState = {
 };
 
 const CardsContext = React.createContext();
-
+const url = "https://api.pokemontcg.io/v2/cards";
 export const CardsProvider = ({ children }) => {
   const [state, dispatch] = React.useReducer(reducer, initialState);
   const openSidebar = () => {
@@ -32,8 +31,9 @@ export const CardsProvider = ({ children }) => {
   const FetchCards = async () => {
     try {
       const response = await fetch(url);
-      const cards = await response.json();
-      dispatch({ type: GET_CARDS_SUCCESS, payload: cards.data });
+      const card = await response.json();
+      const cards = card.data;
+      dispatch({ type: GET_CARDS_SUCCESS, payload: cards });
     } catch (error) {
       dispatch({ type: GET_CARDS_ERROR });
     }

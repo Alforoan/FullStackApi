@@ -5,14 +5,14 @@ import cards_reducer from "../reducers/cards_reducer";
 import Card from "./Card";
 
 function FeaturedCards() {
-  const { featured_products: featured } = useCardsContext();
+  const { featured_products: supertype } = useCardsContext();
   return (
     <Wrapper>
       <div>
-        <h2>Featured Products</h2>
+        <h2>Featured Cards</h2>
       </div>
       <div>
-        {featured.slice(0, 3).map((card) => {
+        {supertype.slice(0, 3).map((card) => {
           return <Card key={card.id} {...card} />;
         })}
       </div>
