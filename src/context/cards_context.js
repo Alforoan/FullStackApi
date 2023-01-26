@@ -7,6 +7,8 @@ import {
   GET_CARDS_BEGIN,
   GET_CARDS_SUCCESS,
   GET_CARDS_ERROR,
+  GET_SINGLE_CARD_BEGIN,
+  GET_SINGLE_CARD_SUCCESS,
 } from "../actions";
 
 const initialState = {
@@ -14,6 +16,7 @@ const initialState = {
   cards_error: false,
   cards: [],
   featured_cards: [],
+  single_product: {},
 };
 
 const CardsContext = React.createContext();
@@ -36,6 +39,18 @@ export const CardsProvider = ({ children }) => {
       dispatch({ type: GET_CARDS_SUCCESS, payload: cards });
     } catch (error) {
       dispatch({ type: GET_CARDS_ERROR });
+    }
+  };
+
+  const FetchSingleCard = async () => {
+    dispatch({ type: GET_SINGLE_CARD_BEGIN });
+    try {
+      const response = await fetch(url);
+      const cards = await response.json();
+      const singleProduct = cards.data;
+      dispatch({ type: GET_SINGLE_CARD_SUCCESS, payload: singleProduct });
+    } catch (error) {
+      console.log(error);
     }
   };
 
