@@ -3,14 +3,14 @@ import styled from "styled-components";
 import { useCardsContext } from "../context/cards_context";
 import cards_reducer from "../reducers/cards_reducer";
 import Card from "./Card";
+import Loading from "./Loading";
 
 function FeaturedCards() {
-  const { featured_cards: name } = useCardsContext();
+  const { cards_loading, loading, featured_cards: name } = useCardsContext();
 
-  if (!name) {
-    return <div>loading</div>;
+  if (loading) {
+    return <Loading />;
   }
-
   return (
     <Wrapper>
       <div>

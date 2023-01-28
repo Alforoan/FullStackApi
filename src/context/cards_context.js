@@ -14,6 +14,8 @@ import {
 const initialState = {
   isSidebarOpen: false,
   cards_error: false,
+  cards_loading: false,
+  single_card_loading: false,
   cards: [],
   featured_cards: [],
   single_card: {},
@@ -32,6 +34,7 @@ export const CardsProvider = ({ children }) => {
   };
 
   const FetchCards = async () => {
+    dispatch({ type: GET_CARDS_BEGIN });
     try {
       const response = await fetch(url);
       const card = await response.json();

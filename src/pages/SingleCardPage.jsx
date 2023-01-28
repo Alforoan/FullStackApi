@@ -4,20 +4,27 @@ import { useCardsContext } from "../context/cards_context";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
 import PageHero from "../components/PageHero";
+import Loading from "../components/Loading";
 
 const single_card_url = `https://api.pokemontcg.io/v2/cards/`;
 
 function SingleCardPage() {
   const { id } = useParams();
-  const { single_card: card, FetchSingleCard } = useCardsContext();
+  const {
+    single_card_loading: loading,
+    single_card: card,
+    FetchSingleCard,
+  } = useCardsContext();
 
   React.useEffect(() => {
     FetchSingleCard(`${single_card_url}${id}`);
   }, [id]);
 
+  if (loading) {
+    return <Loading />;
+  }
   console.log(card);
 
-  if (!card) return <div>Loading</div>;
   const {
     name,
     rarity,
