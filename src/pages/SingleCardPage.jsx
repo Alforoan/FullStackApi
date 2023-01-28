@@ -7,19 +7,22 @@ import PageHero from "../components/PageHero";
 
 const single_card_url = `https://api.pokemontcg.io/v2/cards/`;
 
-function SingleCardPage({ name, images }) {
+function SingleCardPage() {
   const { id } = useParams();
   const { single_card: card, FetchSingleCard } = useCardsContext();
+
   React.useEffect(() => {
     FetchSingleCard(`${single_card_url}${id}`);
   }, [id]);
 
+  console.log(card);
+
+  if (!card) return <div>loading</div>;
+  const { name } = card;
   return (
     <Wrapper>
-      <PageHero title={name} card={card} />
-      <div>
-        <img src={images} alt={name} />
-      </div>
+      <PageHero title={name} card />
+
       <div>
         <Link to="/cards">Back to cards</Link>
       </div>

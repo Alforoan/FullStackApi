@@ -42,12 +42,35 @@ export const CardsProvider = ({ children }) => {
     }
   };
 
-  const FetchSingleCard = async () => {
+  // const FetchCards = async (url) => {
+  //   try {
+  //     const response = await axios.get(url);
+
+  //     const cards = response.data.data;
+  //     dispatch({ type: GET_CARDS_SUCCESS, payload: cards });
+  //   } catch (error) {
+  //     dispatch({ type: GET_CARDS_ERROR });
+  //   }
+  // };
+
+  // const FetchSingleCard = async () => {
+  //   dispatch({ type: GET_SINGLE_CARD_BEGIN });
+  //   try {
+  //     const response = await fetch(url);
+  //     const cards = await response.json();
+  //     const singleCard = cards.data;
+  //     dispatch({ type: GET_SINGLE_CARD_SUCCESS, payload: singleCard });
+  //   } catch (error) {
+  //     console.log(error);
+  //   }
+  // };
+
+  const FetchSingleCard = async (url) => {
     dispatch({ type: GET_SINGLE_CARD_BEGIN });
     try {
-      const response = await fetch(url);
-      const cards = await response.json();
-      const singleCard = cards.data;
+      const response = await axios.get(url);
+
+      const singleCard = response.data.data;
       dispatch({ type: GET_SINGLE_CARD_SUCCESS, payload: singleCard });
     } catch (error) {
       console.log(error);

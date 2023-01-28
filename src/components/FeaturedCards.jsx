@@ -6,6 +6,9 @@ import Card from "./Card";
 
 function FeaturedCards() {
   const { featured_cards: name } = useCardsContext();
+
+  if (!name) return <div>loading</div>;
+
   return (
     <Wrapper>
       <div>
