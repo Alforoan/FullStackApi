@@ -20,7 +20,6 @@ function SingleCardPage() {
   if (!card) {
     return <div>loading</div>;
   }
-  console.log("card.images.large: ", card.images.large);
 
   const {
     id: sky,
@@ -34,7 +33,7 @@ function SingleCardPage() {
     subtypes: stage,
     attacks: attack,
   } = card;
-
+  console.log(card.attacks[1].text);
   return (
     <Wrapper>
       <PageHero title={name} card />
@@ -57,9 +56,16 @@ function SingleCardPage() {
             <span>Attack 1: </span>
             {attack[0].name} - {attack[0].text}
           </p>
-          {attack[1] ? (
+          {attack[1] && attack[1].text ? (
             <p>
               <span>Attack 2: </span> {attack[1].name} - {attack[1].text}
+            </p>
+          ) : (
+            ""
+          )}
+          {attack[2] && attack[2].text ? (
+            <p>
+              <span>Attack 3: </span> {attack[2].name} - {attack[2].text}
             </p>
           ) : (
             ""
