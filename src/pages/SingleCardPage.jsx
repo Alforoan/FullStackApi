@@ -20,13 +20,13 @@ function SingleCardPage() {
   if (!card) {
     return <div>loading</div>;
   }
-
-  console.log(card);
+  console.log("card.images.large: ", card.images.large);
 
   const {
     id: sky,
     name,
     rarity,
+
     images: { large: image },
     set: { name: setName },
     hp,
@@ -34,20 +34,21 @@ function SingleCardPage() {
     subtypes: stage,
     attacks: attack,
   } = card;
+
   return (
     <Wrapper>
       <PageHero title={name} card />
       <div className="card-container">
         <img src={image} alt={name} />
         <div>
-          <h2>{name}</h2>
-          <p>{setName}</p>
-
-          <h3>Product Details</h3>
+          <h2>{name}</h2>{" "}
           <p>
             <span>Rarity:</span>
             {rarity}
           </p>
+          <p>{hp}</p>
+          <p>{setName}</p>
+          <h3>Product Details</h3>
           <p>
             <span>Card Type / HP / Stage:</span>
             {type} / {hp} / {stage[0]}

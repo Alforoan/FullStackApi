@@ -20,7 +20,7 @@ const initialState = {
   featured_cards: [],
   single_card_loading: false,
   single_card_error: false,
-  single_card: {},
+  single_card: null,
 };
 
 const CardsContext = React.createContext();
