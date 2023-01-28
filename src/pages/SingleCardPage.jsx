@@ -5,6 +5,7 @@ import { Link } from "react-router-dom";
 import styled from "styled-components";
 import PageHero from "../components/PageHero";
 import Loading from "../components/Loading";
+import Error from "../components/Error";
 
 const single_card_url = `https://api.pokemontcg.io/v2/cards/`;
 
@@ -14,6 +15,7 @@ function SingleCardPage() {
     single_card_loading: loading,
     single_card: card,
     FetchSingleCard,
+    single_card_error: error,
   } = useCardsContext();
 
   React.useEffect(() => {
@@ -21,11 +23,15 @@ function SingleCardPage() {
   }, [id]);
 
   if (!card) {
-    return <div>loading</div>;
+    return <Loading />;
+  }
+  if (error) {
+    return <Error />;
   }
   console.log(card);
 
   const {
+    id: sky,
     name,
     rarity,
     images: { large: image },

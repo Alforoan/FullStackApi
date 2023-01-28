@@ -9,15 +9,17 @@ import {
   GET_CARDS_ERROR,
   GET_SINGLE_CARD_BEGIN,
   GET_SINGLE_CARD_SUCCESS,
+  GET_SINGLE_CARD_ERROR,
 } from "../actions";
 
 const initialState = {
   isSidebarOpen: false,
-  cards_error: false,
   cards_loading: false,
-  single_card_loading: false,
+  cards_error: false,
   cards: [],
   featured_cards: [],
+  single_card_loading: false,
+  single_card_error: false,
   single_card: {},
 };
 
@@ -72,11 +74,10 @@ export const CardsProvider = ({ children }) => {
     dispatch({ type: GET_SINGLE_CARD_BEGIN });
     try {
       const response = await axios.get(url);
-
       const singleCard = response.data.data;
       dispatch({ type: GET_SINGLE_CARD_SUCCESS, payload: singleCard });
     } catch (error) {
-      console.log(error);
+      dispatch({ type: GET_SINGLE_CARD_ERROR });
     }
   };
 

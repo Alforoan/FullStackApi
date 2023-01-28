@@ -4,12 +4,20 @@ import { useCardsContext } from "../context/cards_context";
 import cards_reducer from "../reducers/cards_reducer";
 import Card from "./Card";
 import Loading from "./Loading";
+import Error from "./Error";
 
 function FeaturedCards() {
-  const { cards_loading, loading, featured_cards: name } = useCardsContext();
+  const {
+    cards_loading: loading,
+    featured_cards: name,
+    cards_error: error,
+  } = useCardsContext();
 
   if (loading) {
     return <Loading />;
+  }
+  if (error) {
+    return <Error />;
   }
   return (
     <Wrapper>
