@@ -35,28 +35,28 @@ export const CardsProvider = ({ children }) => {
     dispatch({ type: SIDEBAR_CLOSE });
   };
 
-  const FetchCards = async () => {
-    dispatch({ type: GET_CARDS_BEGIN });
-    try {
-      const response = await fetch(url);
-      const card = await response.json();
-      const cards = card.data;
-      dispatch({ type: GET_CARDS_SUCCESS, payload: cards });
-    } catch (error) {
-      dispatch({ type: GET_CARDS_ERROR });
-    }
-  };
-
-  // const FetchCards = async (url) => {
+  // const FetchCards = async () => {
+  //   dispatch({ type: GET_CARDS_BEGIN });
   //   try {
-  //     const response = await axios.get(url);
-
-  //     const cards = response.data.data;
+  //     const response = await fetch(url);
+  //     const card = await response.json();
+  //     const cards = card.data;
   //     dispatch({ type: GET_CARDS_SUCCESS, payload: cards });
   //   } catch (error) {
   //     dispatch({ type: GET_CARDS_ERROR });
   //   }
   // };
+
+  const FetchCards = async (url) => {
+    dispatch({ type: GET_CARDS_BEGIN });
+    try {
+      const response = await axios.get(url);
+      const cards = response.data.data;
+      dispatch({ type: GET_CARDS_SUCCESS, payload: cards });
+    } catch (error) {
+      dispatch({ type: GET_CARDS_ERROR });
+    }
+  };
 
   // const FetchSingleCard = async () => {
   //   dispatch({ type: GET_SINGLE_CARD_BEGIN });
@@ -82,7 +82,7 @@ export const CardsProvider = ({ children }) => {
   };
 
   React.useEffect(() => {
-    FetchCards();
+    FetchCards(url);
   }, []);
 
   return (

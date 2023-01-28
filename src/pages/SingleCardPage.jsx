@@ -11,23 +11,16 @@ const single_card_url = `https://api.pokemontcg.io/v2/cards/`;
 
 function SingleCardPage() {
   const { id } = useParams();
-  const {
-    single_card_loading: loading,
-    single_card: card,
-    FetchSingleCard,
-    single_card_error: error,
-  } = useCardsContext();
+  const { single_card: card, FetchSingleCard } = useCardsContext();
 
   React.useEffect(() => {
     FetchSingleCard(`${single_card_url}${id}`);
   }, [id]);
 
   if (!card) {
-    return <Loading />;
+    return <div>loading</div>;
   }
-  if (error) {
-    return <Error />;
-  }
+
   console.log(card);
 
   const {
