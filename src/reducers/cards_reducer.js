@@ -25,6 +25,7 @@ function cards_reducer(state, action) {
 
     return {
       ...state,
+      cards_loading: false,
       cards: action.payload,
       featured_cards,
     };
@@ -39,6 +40,7 @@ function cards_reducer(state, action) {
     return {
       ...state,
       single_card: action.payload,
+      single_card_loading: false,
     };
   }
 }

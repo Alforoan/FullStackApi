@@ -20,8 +20,8 @@ function SingleCardPage() {
     FetchSingleCard(`${single_card_url}${id}`);
   }, [id]);
 
-  if (loading) {
-    return <Loading />;
+  if (!card) {
+    return <div>loading</div>;
   }
   console.log(card);
 
