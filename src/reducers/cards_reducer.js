@@ -28,7 +28,7 @@ function cards_reducer(state, action) {
   if (action.type === GET_SINGLE_CARD_SUCCESS) {
     return {
       ...state,
-      single_product: action.payload,
+      single_card: action.payload,
     };
   }
 }

@@ -4,7 +4,7 @@ import PageHero from "../components/PageHero";
 function CardsPage() {
   return (
     <main>
-      <PageHero title="Cards" />
+      <h4>Cards Page</h4>
     </main>
   );
 }

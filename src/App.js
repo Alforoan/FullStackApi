@@ -3,7 +3,7 @@ import styled from "styled-components";
 import Navbar from "./components/Navbar";
 import { Routes, Route } from "react-router-dom";
 import Home from "./pages/HomePage";
-import SingleProduct from "./pages/SingleProductPage";
+import SingleCard from "./pages/SingleCardPage";
 import Footer from "./components/Footer";
 import Sidebar from "./components/Sidebar";
 import Error from "./pages/ErrorPage";
@@ -21,7 +21,7 @@ function App() {
         <Route path="/about" element={<About />} />
         <Route path="/checkout" element={<Checkout />} />
         <Route path="/cards" element={<Cards />} />
-        <Route path="/products/:id" element={<SingleProduct />} />
+        <Route path="/cards/:id" element={<SingleCard />} />
         <Route exact path="/*" element={<Error />} />
       </Routes>
       <Footer />

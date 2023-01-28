@@ -16,7 +16,7 @@ const initialState = {
   cards_error: false,
   cards: [],
   featured_cards: [],
-  single_product: {},
+  single_card: {},
 };
 
 const CardsContext = React.createContext();
@@ -47,8 +47,8 @@ export const CardsProvider = ({ children }) => {
     try {
       const response = await fetch(url);
       const cards = await response.json();
-      const singleProduct = cards.data;
-      dispatch({ type: GET_SINGLE_CARD_SUCCESS, payload: singleProduct });
+      const singleCard = cards.data;
+      dispatch({ type: GET_SINGLE_CARD_SUCCESS, payload: singleCard });
     } catch (error) {
       console.log(error);
     }
@@ -59,7 +59,9 @@ export const CardsProvider = ({ children }) => {
   }, []);
 
   return (
-    <CardsContext.Provider value={{ ...state, openSidebar, closeSidebar }}>
+    <CardsContext.Provider
+      value={{ ...state, openSidebar, closeSidebar, FetchSingleCard }}
+    >
       {children}
     </CardsContext.Provider>
   );

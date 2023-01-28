@@ -16,7 +16,7 @@ function Card({
         <div>
           <h3 className="pokemon-name">{name}</h3>
           <img className="pokemon-image" src={image} alt={name} />
-          <Link to={`/products/${id}`}>
+          <Link to={`/cards/${id}`}>
             <FaSearch />
           </Link>
         </div>
