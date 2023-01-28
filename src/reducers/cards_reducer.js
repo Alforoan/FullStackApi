@@ -6,6 +6,7 @@ import {
   GET_SINGLE_CARD_BEGIN,
   GET_SINGLE_CARD_SUCCESS,
   GET_CARDS_BEGIN,
+  GET_CARDS_ERROR,
 } from "../actions";
 
 function cards_reducer(state, action) {
@@ -30,10 +31,14 @@ function cards_reducer(state, action) {
       featured_cards,
     };
   }
+  if (action.type === GET_CARDS_ERROR) {
+    return { ...state, cards_loading: false, cards_error: true };
+  }
   if (action.type === GET_SINGLE_CARD_BEGIN) {
     return {
       ...state,
       single_card_loading: true,
+      single_card_error: false,
     };
   }
   if (action.type === GET_SINGLE_CARD_SUCCESS) {
@@ -43,6 +48,7 @@ function cards_reducer(state, action) {
       single_card_loading: false,
     };
   }
+  throw new Error(`No Matching "${action.type}" - action type`);
 }
 
 export default cards_reducer;
