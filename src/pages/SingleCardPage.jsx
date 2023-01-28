@@ -17,12 +17,48 @@ function SingleCardPage() {
 
   console.log(card);
 
-  if (!card) return <div>loading</div>;
-  const { name } = card;
+  if (!card) return <div>Loading</div>;
+  const {
+    name,
+    rarity,
+    images: { large: image },
+    set: { name: setName },
+    hp,
+    types: type,
+    subtypes: stage,
+    attacks: attack,
+  } = card;
   return (
     <Wrapper>
       <PageHero title={name} card />
+      <div className="card-container">
+        <img src={image} alt={name} />
+        <div>
+          <h2>{name}</h2>
+          <p>{setName}</p>
 
+          <h3>Product Details</h3>
+          <p>
+            <span>Rarity:</span>
+            {rarity}
+          </p>
+          <p>
+            <span>Card Type / HP / Stage:</span>
+            {type} / {hp} / {stage[0]}
+          </p>
+          <p>
+            <span>Attack 1: </span>
+            {attack[0].name} - {attack[0].text}
+          </p>
+          {attack[1] ? (
+            <p>
+              <span>Attack 2: </span> {attack[1].name} - {attack[1].text}
+            </p>
+          ) : (
+            ""
+          )}
+        </div>
+      </div>
       <div>
         <Link to="/cards">Back to cards</Link>
       </div>
@@ -30,6 +66,10 @@ function SingleCardPage() {
   );
 }
 
-const Wrapper = styled.div``;
+const Wrapper = styled.div`
+  .card-container {
+    display: flex;
+  }
+`;
 
 export default SingleCardPage;
