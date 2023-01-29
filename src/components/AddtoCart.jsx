@@ -6,8 +6,16 @@ import IncreaseDecreaseButton from "./IncreaseDecreaseButton";
 function AddtoCart() {
   const [amount, setAmount] = React.useState(1);
 
-  function Increase() {}
-  function Decrease() {}
+  function Increase() {
+    if (amount >= 0) {
+      setAmount((prev) => prev + 1);
+    }
+  }
+  function Decrease() {
+    if (amount >= 1) {
+      setAmount((prev) => prev - 1);
+    }
+  }
   return (
     <Wrapper>
       <div>
