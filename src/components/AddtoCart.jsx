@@ -12,7 +12,7 @@ function AddtoCart() {
     }
   }
   function Decrease() {
-    if (amount >= 1) {
+    if (amount >= 2) {
       setAmount((prev) => prev - 1);
     }
   }
