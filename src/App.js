@@ -10,6 +10,7 @@ import Error from "./pages/ErrorPage";
 import About from "./pages/AboutPage";
 import Checkout from "./pages/CheckoutPage";
 import Cards from "./pages/CardsPage";
+import Cart from "./pages/CartPage";
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<About />} />
         <Route path="/checkout" element={<Checkout />} />
+        <Route path="/cart" element={<Cart />} />
         <Route path="/cards" element={<Cards />} />
         <Route path="/cards/:id" element={<SingleCard />} />
         <Route exact path="/*" element={<Error />} />
