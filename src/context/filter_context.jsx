@@ -19,7 +19,13 @@ const initialState = {
 const FilterContext = React.createContext();
 
 export function FilterProvider({ children }) {
+  const { cards } = useCardsContext();
   const [state, dispatch] = React.useReducer(reducer, initialState);
+
+  React.useEffect(() => {
+    dispatch({ type: LOAD_CARDS, payload: cards });
+  }, [cards]);
+
   return (
     <FilterContext.Provider value="filter context">
       {children}

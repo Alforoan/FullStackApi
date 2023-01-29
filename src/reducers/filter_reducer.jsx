@@ -12,6 +12,13 @@ import {
 import React from "react";
 
 function filter_reducer(state, action) {
+  if (action.type === LOAD_CARDS) {
+    return {
+      ...state,
+      all_cards: [...action.payload],
+      filter_cards: [...action.payload],
+    };
+  }
   return state;
   throw new Error(`No Matching "${action.type}" - action type`);
 }
