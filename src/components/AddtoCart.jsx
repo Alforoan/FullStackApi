@@ -1,6 +1,7 @@
 import React from "react";
 
-function AddtoCart() {
+function AddtoCart({ card = {} }) {
+  const { id } = card;
   return <div>AddtoCart</div>;
 }
 

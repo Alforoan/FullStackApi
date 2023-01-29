@@ -6,6 +6,7 @@ import styled from "styled-components";
 import PageHero from "../components/PageHero";
 import Loading from "../components/Loading";
 import Error from "../components/Error";
+import AddtoCart from "../components/AddtoCart";
 
 const single_card_url = `https://api.pokemontcg.io/v2/cards/`;
 
@@ -33,7 +34,7 @@ function SingleCardPage() {
     subtypes: stage,
     attacks: attack,
   } = card;
-  console.log(card.attacks[1].text);
+
   return (
     <Wrapper>
       <PageHero title={name} card />
@@ -56,20 +57,24 @@ function SingleCardPage() {
             <span>Attack 1: </span>
             {attack[0].name} - {attack[0].text}
           </p>
-          {attack[1] && attack[1].text ? (
+          {attack[1] ? (
             <p>
-              <span>Attack 2: </span> {attack[1].name} - {attack[1].text}
+              <span>Attack 2: </span> {attack[1].name} -
+              {attack[1].text ? attack[1].text : "No description"}
             </p>
           ) : (
             ""
           )}
           {attack[2] && attack[2].text ? (
             <p>
-              <span>Attack 3: </span> {attack[2].name} - {attack[2].text}
+              <span>Attack 3: </span> {attack[2].name} -
+              {attack[2].text ? attack[2].text : "No description"}
             </p>
           ) : (
             ""
           )}
+          <hr />
+          <AddtoCart />
         </div>
       </div>
       <div>
