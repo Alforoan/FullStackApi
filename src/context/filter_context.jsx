@@ -10,6 +10,7 @@ import {
   CLEAR_FILTERS,
 } from "../actions";
 import { useCardsContext } from "./cards_context";
+import reducer from "../reducers/filter_reducer";
 
 const initialState = {
   filtered_cards: [],
@@ -18,7 +19,7 @@ const initialState = {
 
 const FilterContext = React.createContext();
 
-export function FilterProvider({ children }) {
+export default function FilterProvider({ children }) {
   const { cards } = useCardsContext();
   const [state, dispatch] = React.useReducer(reducer, initialState);
 
