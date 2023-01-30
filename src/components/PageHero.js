@@ -6,7 +6,7 @@ const PageHero = ({ title, card }) => {
     <Wrapper>
       <div>
         <h3 className="link-text">
-          <Link to="/">Home</Link> /{card && <Link to="/cards"> Cards</Link>}/{" "}
+          <Link to="/">Home</Link>/{card && <Link to="/cards">Cards</Link>}/
           {title}
         </h3>
       </div>

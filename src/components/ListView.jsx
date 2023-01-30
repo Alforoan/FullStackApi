@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-
+import { Link } from "react-router-dom";
 function ListView({ cards }) {
   return (
     <Wrapper>
@@ -21,12 +21,9 @@ function ListView({ cards }) {
               <img src={image} alt={name} />
               <div>
                 <h4>{name}</h4>
-                <h5>{id}</h5>
-                <h5>
-                  {typeof price === "undefined"
-                    ? "No market price"
-                    : `$${price}`}
-                </h5>
+
+                <h5>{price || "No market price"}</h5>
+                <Link to={`/cards/${id}`}>Details</Link>
               </div>
             </article>
           );
