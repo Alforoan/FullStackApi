@@ -13,24 +13,31 @@ import React from "react";
 
 function filter_reducer(state, action) {
   if (action.type === LOAD_CARDS) {
-    let maxPrice = action.payload.filter((card) => {
-      if (card?.cardmarket) {
-        if (
-          typeof card.cardmarket.prices.averageSellPrice !== "undefined" ||
-          typeof card.cardmarket.prices.averageSellPrice === "number"
-        ) {
-          return card.cardmarket.prices.averageSellPrice;
-        }
-      }
-    });
-    maxPrice = maxPrice.map((card) => card.cardmarket.prices.averageSellPrice);
+    let maxPrice = action.payload
+      .filter((card) => card.cardmarket?.prices?.averageSellPrice)
+      .map((card) => card.cardmarket.prices.averageSellPrice);
 
     maxPrice = Math.max(...maxPrice);
+
+    // let maxPrice = action.payload.filter((card) => {
+    //   if (card?.cardmarket) {
+    //     if (
+    //       typeof card.cardmarket.prices.averageSellPrice !== "undefined" ||
+    //       typeof card.cardmarket.prices.averageSellPrice === "number"
+    //     ) {
+    //       return card.cardmarket.prices.averageSellPrice;
+    //     }
+    //   }
+    // });
+    // maxPrice = maxPrice.map((card) => card.cardmarket.prices.averageSellPrice);
+
+    // maxPrice = Math.max(...maxPrice);
     console.log(maxPrice);
     return {
       ...state,
       all_cards: [...action.payload],
       filtered_cards: [...action.payload],
+      filters: {},
     };
   }
   if (action.type === SET_GRIDVIEW) {
