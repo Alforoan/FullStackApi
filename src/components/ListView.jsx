@@ -22,7 +22,7 @@ function ListView({ cards }) {
               <div>
                 <h4>{name}</h4>
 
-                <h5>{price || "No market price"}</h5>
+                <h5>{price ? `$${price}` : "No market price"}</h5>
                 <Link to={`/cards/${id}`}>Details</Link>
               </div>
             </article>

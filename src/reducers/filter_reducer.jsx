@@ -37,6 +37,42 @@ function filter_reducer(state, action) {
       sort: action.payload,
     };
   }
+  if (action.type === SORT_CARDS) {
+    const { sort, filtered_cards } = state;
+    let tempCards = [...filtered_cards];
+    if (sort === "price-lowest") {
+      tempCards = tempCards
+        .filter((card) => card?.cardmarket)
+        .sort(
+          (a, b) =>
+            a.cardmarket.prices.averageSellPrice -
+            b.cardmarket.prices.averageSellPrice
+        );
+    }
+    if (sort === "price-highest") {
+      tempCards = tempCards
+        .filter((card) => card?.cardmarket)
+        .sort(
+          (a, b) =>
+            b.cardmarket.prices.averageSellPrice -
+            a.cardmarket.prices.averageSellPrice
+        );
+    }
+    if (sort === "name-a") {
+      tempCards = tempCards.sort((a, b) => {
+        return a.name.localeCompare(b.name);
+      });
+    }
+    if (sort === "name-z") {
+      tempCards = tempCards.sort((a, b) => {
+        return b.name.localeCompare(a.name);
+      });
+    }
+    return {
+      ...state,
+      filtered_cards: tempCards,
+    };
+  }
   return state;
   throw new Error(`No Matching "${action.type}" - action type`);
 }

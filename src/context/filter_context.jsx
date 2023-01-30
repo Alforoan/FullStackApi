@@ -29,6 +29,10 @@ export default function FilterProvider({ children }) {
     dispatch({ type: LOAD_CARDS, payload: cards });
   }, [cards]);
 
+  React.useEffect(() => {
+    dispatch({ type: SORT_CARDS });
+  }, [cards, state.sort]);
+
   const setGridView = () => {
     dispatch({ type: SET_GRIDVIEW });
   };
