@@ -15,6 +15,7 @@ import reducer from "../reducers/filter_reducer";
 const initialState = {
   filtered_cards: [],
   all_cards: [],
+  grid_view: false,
 };
 
 const FilterContext = React.createContext();
