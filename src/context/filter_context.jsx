@@ -17,6 +17,14 @@ const initialState = {
   all_cards: [],
   grid_view: true,
   sort: "price-lowest",
+  filters: {
+    text: "",
+    category: "all",
+    min_price: 0,
+    max_price: 0,
+    price: 0,
+    types: "all",
+  },
 };
 
 const FilterContext = React.createContext();
