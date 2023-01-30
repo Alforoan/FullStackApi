@@ -16,7 +16,7 @@ function filter_reducer(state, action) {
     return {
       ...state,
       all_cards: [...action.payload],
-      filter_cards: [...action.payload],
+      filtered_cards: [...action.payload],
     };
   }
   return state;

@@ -6,9 +6,9 @@ function Card({
   id,
   name,
   images: { large: image },
-  cardmarket: {
-    prices: { averageSellPrice: price },
-  },
+  // cardmarket: {
+  //   prices: { averageSellPrice: price },
+  // },
 }) {
   return (
     <Wrapper>
@@ -20,9 +20,7 @@ function Card({
             <FaSearch />
           </Link>
         </div>
-        <footer>
-          <p>${price}</p>
-        </footer>
+        <footer>{/* <p>${price}</p> */}</footer>
       </main>
     </Wrapper>
   );
