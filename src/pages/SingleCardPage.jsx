@@ -33,6 +33,10 @@ function SingleCardPage() {
     types: type,
     subtypes: stage,
     attacks: attack,
+
+    cardmarket: {
+      prices: { averageSellPrice: price },
+    },
   } = card;
 
   return (
@@ -73,6 +77,9 @@ function SingleCardPage() {
           ) : (
             ""
           )}
+          <footer>
+            {typeof price === "undefined" ? "No market price" : `$${price}`}
+          </footer>
           <hr />
           <AddtoCart />
         </div>

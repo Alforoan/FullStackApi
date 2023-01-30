@@ -2,14 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
 import { FaSearch } from "react-icons/fa";
-function Card({
-  id,
-  name,
-  images: { large: image },
-  // cardmarket: {
-  //   prices: { averageSellPrice: price },
-  // },
-}) {
+function Card({ id, name, images: { large: image } }) {
   return (
     <Wrapper>
       <main className="card-container">
@@ -20,7 +13,6 @@ function Card({
             <FaSearch />
           </Link>
         </div>
-        <footer>{/* <p>${price}</p> */}</footer>
       </main>
     </Wrapper>
   );
