@@ -2,12 +2,17 @@ import React from "react";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
 import { FaSearch } from "react-icons/fa";
-function Card({ id, name, images: { large: image } }) {
+function Card({ id, name, images: { large: image }, cardmarket }) {
   return (
     <Wrapper>
       <main className="card-container">
         <div>
           <h3 className="pokemon-name">{name}</h3>
+          <p>
+            {cardmarket.prices?.averageSellPrice
+              ? `$${cardmarket.prices?.averageSellPrice}`
+              : "No market price"}
+          </p>
           <img className="pokemon-image" src={image} alt={name} />
           <Link to={`/cards/${id}`}>
             <FaSearch />

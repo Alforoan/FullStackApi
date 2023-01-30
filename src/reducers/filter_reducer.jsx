@@ -37,7 +37,7 @@ function filter_reducer(state, action) {
       ...state,
       all_cards: [...action.payload],
       filtered_cards: [...action.payload],
-      filters: {},
+      filters: { ...state.filters, max_price: maxPrice, price: maxPrice },
     };
   }
   if (action.type === SET_GRIDVIEW) {
@@ -63,7 +63,7 @@ function filter_reducer(state, action) {
     let tempCards = [...filtered_cards];
     if (sort === "price-lowest") {
       tempCards = tempCards
-        .filter((card) => card?.cardmarket)
+        .filter((card) => card.cardmarket?.prices?.averageSellPrice)
         .sort(
           (a, b) =>
             a.cardmarket.prices.averageSellPrice -
@@ -72,7 +72,7 @@ function filter_reducer(state, action) {
     }
     if (sort === "price-highest") {
       tempCards = tempCards
-        .filter((card) => card?.cardmarket)
+        .filter((card) => card.cardmarket?.prices?.averageSellPrice)
         .sort(
           (a, b) =>
             b.cardmarket.prices.averageSellPrice -
