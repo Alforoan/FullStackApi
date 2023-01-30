@@ -15,7 +15,7 @@ import reducer from "../reducers/filter_reducer";
 const initialState = {
   filtered_cards: [],
   all_cards: [],
-  grid_view: false,
+  grid_view: true,
 };
 
 const FilterContext = React.createContext();
@@ -28,8 +28,16 @@ export default function FilterProvider({ children }) {
     dispatch({ type: LOAD_CARDS, payload: cards });
   }, [cards]);
 
+  const setGridView = () => {
+    dispatch({ type: SET_GRIDVIEW });
+  };
+
+  const setListView = () => {
+    dispatch({ type: SET_LISTVIEW });
+  };
+
   return (
-    <FilterContext.Provider value={{ ...state }}>
+    <FilterContext.Provider value={{ ...state, setListView, setGridView }}>
       {children}
     </FilterContext.Provider>
   );
