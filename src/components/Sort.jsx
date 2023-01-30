@@ -15,6 +15,17 @@ function Sort() {
           <BsList />
         </button>
       </div>
+      <p>{cards.length} cards found</p>
+      <hr />
+      <form>
+        <label htmlFor="sort">Sort by</label>
+        <select name="sort" id="sort">
+          <option value="price-lowest">price (lowest)</option>
+          <option value="price-highest">price (highest)</option>
+          <option value="name-a">name (a-z)</option>
+          <option value="name-z">name (z-a)</option>
+        </select>
+      </form>
     </Wrapper>
   );
 }
