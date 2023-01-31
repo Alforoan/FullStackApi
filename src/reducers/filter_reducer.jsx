@@ -99,7 +99,28 @@ function filter_reducer(state, action) {
     return { ...state, filters: { ...state.filters, [name]: value } };
   }
   if (action.type === FILTER_CARDS) {
-    return { ...state };
+    const { all_cards } = state;
+    const { text, price, types, rarity } = state.filters;
+    let tempCards = [...all_cards];
+    if (text) {
+      tempCards = tempCards.filter((card) => {
+        return card.name.toLowerCase().startsWith(text);
+      });
+    }
+    return { ...state, filtered_cards: tempCards };
+  }
+  if (action.type === CLEAR_FILTERS) {
+    return {
+      ...state,
+      filters: {
+        ...state.filters,
+        text: "",
+
+        price: state.filters.max_price,
+        types: "all",
+        rarity: "all",
+      },
+    };
   }
 
   throw new Error(`No Matching "${action.type}" - action type`);

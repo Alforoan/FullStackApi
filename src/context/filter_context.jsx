@@ -19,7 +19,7 @@ const initialState = {
   sort: "price-lowest",
   filters: {
     text: "",
-    category: "all",
+
     min_price: 0,
     max_price: 0,
     price: 0,
@@ -67,7 +67,9 @@ export default function FilterProvider({ children }) {
     }
     dispatch({ type: UPDATE_FILTERS, payload: { name, value } });
   };
-  const clearFilters = () => {};
+  const clearFilters = () => {
+    dispatch({ type: CLEAR_FILTERS });
+  };
   return (
     <FilterContext.Provider
       value={{

@@ -70,6 +70,13 @@ function Filters() {
             />
           </div>
         </form>
+        <button
+          type="button"
+          className="clear-filters-btn"
+          onClick={clearFilters}
+        >
+          clear filters
+        </button>
       </div>
     </Wrapper>
   );
@@ -91,6 +98,13 @@ const Wrapper = styled.section`
 
   .active {
     border-color: lightgray;
+  }
+  .content {
+    position: sticky;
+  }
+  .clear-filters-btn {
+    background: green;
+    border-radius: 5px;
   }
 `;
 export default Filters;
