@@ -2,6 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import Card from "./Card";
 import { Link } from "react-router-dom";
+import { FaSearch } from "react-icons/fa";
 
 function GridView({ cards }) {
   return (
@@ -30,7 +31,9 @@ function GridView({ cards }) {
                 <h4>{name}</h4>
 
                 <h5>{price}</h5>
-                <Link to={`/cards/${id}`}>Details</Link>
+                <Link to={`/cards/${id}`}>
+                  <FaSearch />
+                </Link>
               </div>
             </article>
           );
