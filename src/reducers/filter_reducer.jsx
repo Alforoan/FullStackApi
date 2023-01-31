@@ -113,6 +113,9 @@ function filter_reducer(state, action) {
     if (rarity !== "all") {
       tempCards = tempCards.filter((card) => card.rarity === rarity);
     }
+    tempCards = tempCards.filter(
+      (card) => card.cardmarket?.prices?.averageSellPrice <= price
+    );
 
     return { ...state, filtered_cards: tempCards };
   }

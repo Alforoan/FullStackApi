@@ -61,6 +61,7 @@ function Filters() {
             <h5>Price</h5>
             <p>${price}</p>
             <input
+              className="input-bar"
               type="range"
               name="price"
               onChange={updateFilters}
@@ -108,6 +109,9 @@ const Wrapper = styled.section`
   }
   .options {
     text-transform: capitalize;
+  }
+  .input-bar {
+    width: 40vw;
   }
 `;
 export default Filters;
