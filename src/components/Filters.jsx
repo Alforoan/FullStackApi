@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import { useFilterContext } from "../context/filter_context";
+import { getUniqueValues } from "../utils/etc";
 
 function Filters() {
   const {
@@ -9,6 +10,9 @@ function Filters() {
     clearFilters,
     all_cards,
   } = useFilterContext();
+
+  const categories = getUniqueValues(all_cards, "types");
+  console.log(categories);
   return (
     <Wrapper>
       <div className="content">

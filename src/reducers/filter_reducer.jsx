@@ -98,7 +98,10 @@ function filter_reducer(state, action) {
     const { name, value } = action.payload;
     return { ...state, filters: { ...state.filters, [name]: value } };
   }
-  return state;
+  if (action.type === FILTER_CARDS) {
+    return { ...state };
+  }
+
   throw new Error(`No Matching "${action.type}" - action type`);
 }
 
