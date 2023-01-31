@@ -11,10 +11,9 @@ function Filters() {
     all_cards,
   } = useFilterContext();
 
-  const categories = getUniqueValues(all_cards, "types");
+  const pokeTypes = getUniqueValues(all_cards, "types");
   const rarities = getUniqueRarities(all_cards, "rarity");
 
-  console.log(categories);
   return (
     <Wrapper>
       <div className="content">
@@ -28,11 +27,46 @@ function Filters() {
               onChange={updateFilters}
             />
           </div>
+          <div>
+            <h5>category</h5>
+            <div>
+              {pokeTypes.map((c, index) => {
+                return (
+                  <button
+                    key={index}
+                    onClick={updateFilters}
+                    type="button"
+                    name="types"
+                    className={`${types === c ? "active" : null}`}
+                  >
+                    {c}
+                  </button>
+                );
+              })}
+            </div>
+          </div>
         </form>
       </div>
     </Wrapper>
   );
 }
 
-const Wrapper = styled.section``;
+const Wrapper = styled.section`
+  button {
+    display: block;
+    margin: 0.25em 0;
+    padding: 0.25rem 0;
+    text-transform: capitalize;
+    background: transparent;
+    border: none;
+    border-bottom: 1px solid transparent;
+    letter-spacing: 5px;
+    color: black;
+    cursor: pointer;
+  }
+
+  .active {
+    border-color: lightgray;
+  }
+`;
 export default Filters;
