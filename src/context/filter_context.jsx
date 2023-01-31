@@ -38,8 +38,9 @@ export default function FilterProvider({ children }) {
   }, [cards]);
 
   React.useEffect(() => {
+    dispatch({ type: FILTER_CARDS });
     dispatch({ type: SORT_CARDS });
-  }, [cards, state.sort]);
+  }, [cards, state.sort, state.filters]);
 
   const setGridView = () => {
     dispatch({ type: SET_GRIDVIEW });
@@ -54,7 +55,11 @@ export default function FilterProvider({ children }) {
     const value = e.target.value;
     dispatch({ type: UPDATE_SORT, payload: value });
   };
-  const updateFilters = (e) => {};
+  const updateFilters = (e) => {
+    let name = e.target.name;
+    let value = e.target.value;
+    dispatch({ type: UPDATE_FILTERS, payload: { name, value } });
+  };
   const clearFilters = () => {};
   return (
     <FilterContext.Provider
