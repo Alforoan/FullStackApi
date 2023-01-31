@@ -62,6 +62,9 @@ export default function FilterProvider({ children }) {
     if (name === "types") {
       value = e.target.textContent;
     }
+    if (name === "price") {
+      value = Number(value);
+    }
     dispatch({ type: UPDATE_FILTERS, payload: { name, value } });
   };
   const clearFilters = () => {};

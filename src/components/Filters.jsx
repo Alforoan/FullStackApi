@@ -57,6 +57,18 @@ function Filters() {
               })}
             </select>
           </div>
+          <div>
+            <h5>Price</h5>
+            <p>${price}</p>
+            <input
+              type="range"
+              name="price"
+              onChange={updateFilters}
+              min={min_price}
+              max={max_price}
+              value={price}
+            />
+          </div>
         </form>
       </div>
     </Wrapper>
