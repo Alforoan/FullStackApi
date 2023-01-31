@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import { useFilterContext } from "../context/filter_context";
-import { getUniqueValues } from "../utils/etc";
+import { getUniqueRarities, getUniqueValues } from "../utils/etc";
 
 function Filters() {
   const {
@@ -12,6 +12,8 @@ function Filters() {
   } = useFilterContext();
 
   const categories = getUniqueValues(all_cards, "types");
+  const rarities = getUniqueRarities(all_cards, "rarity");
+
   console.log(categories);
   return (
     <Wrapper>
