@@ -4,7 +4,7 @@ export const getUniqueValues = (data, type) => {
     .sort((a, b) => {
       return a.localeCompare(b);
     });
-  return ["All", ...new Set(unique)];
+  return ["all", ...new Set(unique)];
 };
 
 export const getUniqueRarities = (data, type) => {
@@ -14,5 +14,5 @@ export const getUniqueRarities = (data, type) => {
     .sort((a, b) => {
       return a.localeCompare(b);
     });
-  return ["All", ...new Set(unique)];
+  return ["all", ...new Set(unique)];
 };

@@ -107,6 +107,13 @@ function filter_reducer(state, action) {
         return card.name.toLowerCase().startsWith(text);
       });
     }
+    if (types !== "all") {
+      tempCards = tempCards.filter((card) => card.types[0] === types);
+    }
+    if (rarity !== "all") {
+      tempCards = tempCards.filter((card) => card.rarity === rarity);
+    }
+
     return { ...state, filtered_cards: tempCards };
   }
   if (action.type === CLEAR_FILTERS) {

@@ -50,7 +50,7 @@ function Filters() {
             <select name="rarity" value={rarity} onChange={updateFilters}>
               {rarities.map((c, index) => {
                 return (
-                  <option value={c} key={index}>
+                  <option className="options" value={c} key={index}>
                     {c}
                   </option>
                 );
@@ -105,6 +105,9 @@ const Wrapper = styled.section`
   .clear-filters-btn {
     background: green;
     border-radius: 5px;
+  }
+  .options {
+    text-transform: capitalize;
   }
 `;
 export default Filters;
