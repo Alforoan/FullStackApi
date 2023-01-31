@@ -24,6 +24,7 @@ const initialState = {
     max_price: 0,
     price: 0,
     types: "all",
+    rarity: "all",
   },
 };
 
