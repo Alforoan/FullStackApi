@@ -25,7 +25,11 @@ function CartItem({ id, image, price, name, cardmarket, amount }) {
         decrease={decrease}
       />
       <h5>${price * amount}</h5>
-      <button type="button" onClick={() => removeItem(id)}>
+      <button
+        className="trash-button"
+        type="button"
+        onClick={() => removeItem(id)}
+      >
         <FaTrash />
       </button>
     </Wrapper>
@@ -35,12 +39,28 @@ function CartItem({ id, image, price, name, cardmarket, amount }) {
 const Wrapper = styled.article`
   display: flex;
   justify-content: center;
+  align-items: center;
   column-gap: 5rem;
   .container {
     display: flex;
   }
   .image {
     width: 150px;
+  }
+  .trash-button {
+    color: white;
+    background: transparent;
+    border: transparent;
+    letter-spacing: 3px;
+    background: darkred;
+    width: 1.5rem;
+    height: 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 0.25rem;
+    font-size: 0.75rem;
+    cursor: pointer;
   }
 `;
 

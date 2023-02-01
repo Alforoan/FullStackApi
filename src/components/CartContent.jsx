@@ -9,7 +9,7 @@ import CartTotal from "./CartTotal";
 function CartContent() {
   const { cart, clearCart } = useCartContext();
   return (
-    <Wrapper>
+    <Wrapper className="section section-center">
       <CartColumns />
       {cart.map((item) => {
         return <CartItem key={item.id} {...item} />;
@@ -19,15 +19,26 @@ function CartContent() {
         <Link to="/cards" className="link-btn">
           Continue Shopping
         </Link>
+
+        <button
+          type="button"
+          className="link-btn clear-btn"
+          onClick={clearCart}
+        >
+          Clear Shopping Cart
+        </button>
       </div>
-      <button type="button" className="link-btn clear-btn" onClick={clearCart}>
-        Clear Shopping Cart
-      </button>
       <CartTotal />
     </Wrapper>
   );
 }
 
-const Wrapper = styled.section``;
+const Wrapper = styled.section`
+  .link-container {
+    display: flex;
+    margin-top: 2rem;
+    justify-content: space-between;
+  }
+`;
 
 export default CartContent;

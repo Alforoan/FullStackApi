@@ -7,6 +7,7 @@ import {
   GET_SINGLE_CARD_SUCCESS,
   GET_CARDS_BEGIN,
   GET_CARDS_ERROR,
+  REMOVE_CART_ITEM,
 } from "../actions";
 
 function cards_reducer(state, action) {
@@ -48,6 +49,7 @@ function cards_reducer(state, action) {
       single_card_loading: false,
     };
   }
+
   throw new Error(`No Matching "${action.type}" - action type`);
 }
 
