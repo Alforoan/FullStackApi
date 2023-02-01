@@ -16,6 +16,12 @@ function IncreaseDecreaseButton({ amount, increase, decrease }) {
   );
 }
 
-const Wrapper = styled.div``;
+const Wrapper = styled.div`
+  display: grid;
+  width: 140px;
+  justify-items: center;
+  grid-template-columns: repeat(3, 1fr);
+  align-items: center;
+`;
 
 export default IncreaseDecreaseButton;
