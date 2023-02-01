@@ -5,8 +5,12 @@ import { FaTrash } from "react-icons/fa";
 import { useCartContext } from "../context/cart_context";
 
 function CartItem({ id, image, price, name, cardmarket, amount }) {
-  const increase = () => {};
-  const decrease = () => {};
+  const increase = () => {
+    toggleAmount(id, "inc");
+  };
+  const decrease = () => {
+    toggleAmount(id, "dec");
+  };
   const { removeItem, toggleAmount } = useCartContext();
   return (
     <Wrapper>
