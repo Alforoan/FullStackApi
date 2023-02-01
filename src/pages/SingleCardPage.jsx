@@ -23,7 +23,6 @@ function SingleCardPage() {
   }
 
   const {
-    id: sky,
     name,
     rarity,
 
@@ -58,8 +57,8 @@ function SingleCardPage() {
             {type} / {hp} / {stage[0]}
           </p>
           <p>
-            <span>Attack 1: </span>
-            {attack[0].name} - {attack[0].text}
+            <span>Attack 1: </span> {attack[0].name} -
+            {attack[0].text ? attack[0].text : "No description"}
           </p>
           {attack[1] ? (
             <p>
@@ -81,7 +80,7 @@ function SingleCardPage() {
             {typeof price === "undefined" ? "No market price" : `$${price}`}
           </footer>
           <hr />
-          <AddtoCart />
+          <AddtoCart card={card} />
         </div>
       </div>
       <div>
