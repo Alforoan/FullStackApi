@@ -5,10 +5,12 @@ import { Link } from "react-router-dom";
 import Sidebar from "./Sidebar";
 import { useCardsContext } from "../context/cards_context";
 import { useCartContext } from "../context/cart_context";
+import { useUserContext } from "../context/user_context";
 
 function CartButtons() {
   const { closeSidebar } = useCardsContext();
   const { total_items } = useCartContext();
+  const { loginWithRedirect, myUser, logout } = useUserContext();
   return (
     <Wrapper>
       <Link to="/cart" className="cart-btn" onClick={closeSidebar}>
@@ -20,6 +22,12 @@ function CartButtons() {
       </Link>
       <button type="button" className="login-btn">
         Login <FaUserPlus className="login-icon" />
+      </button>
+      <button
+        type="button"
+        onClick={() => logout({ returnTo: window.location.origin })}
+      >
+        Logout <FaUserMinus />
       </button>
     </Wrapper>
   );
