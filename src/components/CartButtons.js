@@ -20,15 +20,18 @@ function CartButtons() {
           <span className="cart-value">{total_items}</span>
         </span>
       </Link>
-      <button type="button" className="login-btn">
-        Login <FaUserPlus className="login-icon" />
-      </button>
-      <button
-        type="button"
-        onClick={() => logout({ returnTo: window.location.origin })}
-      >
-        Logout <FaUserMinus />
-      </button>
+      {myUser ? (
+        <button
+          type="button"
+          onClick={() => logout({ returnTo: window.location.origin })}
+        >
+          Logout <FaUserMinus />
+        </button>
+      ) : (
+        <button type="button" className="login-btn">
+          Login <FaUserPlus className="login-icon" />
+        </button>
+      )}
     </Wrapper>
   );
 }
