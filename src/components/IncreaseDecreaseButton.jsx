@@ -24,13 +24,13 @@ const Wrapper = styled.div`
   align-items: center;
 
   .amount {
-    font-size: 2.7rem;
+    font-size: 2rem;
   }
 
   .increase-btn {
     border: transparent;
     background: transparent;
-    font-size: 1rem;
+    font-size: 0.8rem;
     display: flex;
     align-items: center;
     cursor: pointer;
@@ -38,7 +38,7 @@ const Wrapper = styled.div`
   .decrease-btn {
     border: transparent;
     background: transparent;
-    font-size: 1rem;
+    font-size: 0.8rem;
     display: flex;
     align-items: center;
     cursor: pointer;

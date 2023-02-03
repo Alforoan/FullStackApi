@@ -10,14 +10,14 @@ function CartTotal() {
       <div>
         <article>
           <h5>
-            Subtotal: <span>{total_amount}</span>
+            Subtotal: <span>${total_amount}</span>
           </h5>
           <p>
-            Tax: <span>{tax}</span>
+            Tax: <span>${tax}</span>
           </p>
           <hr />
-          <h4>
-            Order total: <span>{total_amount + tax}</span>
+          <h4 className="order-total">
+            Order total: <span>${total_amount + tax}</span>
           </h4>
         </article>
         <Link to="/checkout" className="btn">
@@ -36,12 +36,14 @@ const Wrapper = styled.section`
     border: 1px solid lightgray;
     border-radius: 0.25rem;
     padding: 1.5rem 3rem;
+    margin-bottom: 3rem;
   }
   h4,
   h5,
   p {
     display: grid;
     grid-template-columns: 200px 1fr;
+    font-size: 1.2rem;
   }
   p {
     text-transform: capitalize;
@@ -49,15 +51,29 @@ const Wrapper = styled.section`
   h4 {
     margin-top: 2rem;
   }
+
   @media (min-width: 776px) {
     justify-content: flex-end;
   }
   .btn {
     width: 100%;
-    margin-top: 1rem;
+
     text-align: center;
     font-weight: 700;
     text-decoration: none;
+    padding: 1rem 0.5rem;
+    background: #ffd300;
+    border-radius: 0.25rem;
+    :visited {
+      color: black;
+    }
+    :hover {
+      background: #fffd74;
+      transition: all 0.3s linear;
+    }
+  }
+  .order-total {
+    font-size: 1.8rem;
   }
 `;
 

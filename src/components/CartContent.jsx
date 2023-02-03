@@ -14,7 +14,10 @@ function CartContent() {
       {cart.map((item) => {
         return <CartItem key={item.id} {...item} />;
       })}
-      <hr />
+      <hr
+        className="hr
+      "
+      />
       <div className="link-container">
         <Link to="/cards" className="link-btn">
           Continue Shopping
@@ -38,6 +41,29 @@ const Wrapper = styled.section`
     display: flex;
     margin-top: 2rem;
     justify-content: space-between;
+  }
+  hr {
+    margin: 2rem 0;
+  }
+  .link-btn {
+    text-decoration: none;
+    padding: 0.5rem 0.4rem;
+    background: #fcd12a;
+    border-radius: 5px;
+    :visited {
+      color: black;
+    }
+    :hover {
+      background: #ffe6a8;
+      transition: all 0.3s linear;
+    }
+  }
+  .clear-btn {
+    background: lightgray;
+    color: black;
+    font-family: inherit;
+    border: transparent;
+    cursor: pointer;
   }
 `;
 
