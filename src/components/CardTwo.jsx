@@ -73,6 +73,13 @@ const Wrapper = styled.div`
       color: black;
     }
   }
+  .pokemon-image {
+    width: 100%;
+    display: block;
+    height: auto;
+    border-radius: 0.25rem;
+    transition: all 0.3s linear;
+  }
 
   .image-link-container {
     position: relative;
@@ -88,6 +95,18 @@ const Wrapper = styled.div`
 
   padding-right: 2rem;
   padding-left: 2rem;
+
+  @media screen and (max-width: 990px) {
+    .info-container {
+      font-size: 3rem;
+    }
+    .pokemon-name {
+      font-size: 2.4rem;
+    }
+    .price {
+      font-size: 1.8rem;
+    }
+  }
 `;
 
 export default Card;

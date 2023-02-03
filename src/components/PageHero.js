@@ -9,7 +9,13 @@ const PageHero = ({ title, card }) => {
           <Link className="home" to="/">
             Home
           </Link>{" "}
-          /{card && <Link to="/cards">Cards</Link>}/{title}
+          /
+          {card && (
+            <Link to="/cards" className="cards">
+              Cards
+            </Link>
+          )}
+          /{title}
         </h3>
       </div>
     </Wrapper>
@@ -29,6 +35,9 @@ const Wrapper = styled.section`
     display: flex;
     align-items: center;
     justify-content: center;
+  }
+  .cards {
+    color: #c49102;
   }
   .link-text a {
     text-decoration: none;

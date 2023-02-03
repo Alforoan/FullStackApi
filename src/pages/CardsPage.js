@@ -8,11 +8,11 @@ import styled from "styled-components";
 function CardsPage() {
   return (
     <main>
-      <PageHero />
+      <PageHero title="Cards" />
       <Wrapper>
-        <div>
+        <div className="container">
           <Filters />
-          <div>
+          <div className="sort-cardlist-container">
             <Sort />
             <CardList />
           </div>
@@ -22,6 +22,23 @@ function CardsPage() {
   );
 }
 
-const Wrapper = styled.div``;
+const Wrapper = styled.div`
+  .container {
+    display: flex;
+    max-width: 1100px;
+    margin: auto;
+    margin-top: 3rem;
+    max-width: 75vw;
+  }
+
+  @media screen and (max-width: 990px) {
+    .sort-cardlist-container {
+      margin-top: 3rem;
+    }
+    .container {
+      display: block;
+    }
+  }
+`;
 
 export default CardsPage;
