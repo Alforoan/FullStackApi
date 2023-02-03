@@ -66,12 +66,12 @@ const Wrapper = styled.section`
 
   .btn-container {
     display: flex;
-    border: 1px solid black;
+
     justify-content: space-between;
 
     button {
       background: transparent;
-      border: 1px solid black;
+
       color: black;
       width: 1.5rem;
       border-radius: 0.25rem;

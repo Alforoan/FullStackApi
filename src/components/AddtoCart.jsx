@@ -26,7 +26,11 @@ function AddtoCart({ card }) {
           increase={Increase}
           decrease={Decrease}
         />
-        <Link to="/cart" onClick={() => addToCart(id, amount, card)}>
+        <Link
+          className="btn"
+          to="/cart"
+          onClick={() => addToCart(id, amount, card)}
+        >
           Add to Cart
         </Link>
       </div>
@@ -34,6 +38,21 @@ function AddtoCart({ card }) {
   );
 }
 
-const Wrapper = styled.div``;
+const Wrapper = styled.div`
+  .btn {
+    font-size: 1.5rem;
+    text-decoration: none;
+    padding: 0.5rem 0.3rem;
+    border-radius: 0.25rem;
+    background: #f4ca16;
+    :hover {
+      background: #eee600;
+      transition: all 0.3s linear;
+    }
+    :visited {
+      color: black;
+    }
+  }
+`;
 
 export default AddtoCart;
