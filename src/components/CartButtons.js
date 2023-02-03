@@ -22,10 +22,11 @@ function CartButtons() {
       </Link>
       {myUser ? (
         <button
+          className="logout-btn"
           type="button"
           onClick={() => logout({ returnTo: window.location.origin })}
         >
-          Logout <FaUserMinus />
+          Logout <FaUserMinus className="logout-icon" />
         </button>
       ) : (
         <button type="button" className="login-btn" onClick={loginWithRedirect}>
@@ -48,6 +49,9 @@ const Wrapper = styled.div`
   }
   a {
     text-decoration: none;
+    :visited {
+      color: black;
+    }
   }
   .cart-container {
     display: flex;
@@ -69,17 +73,19 @@ const Wrapper = styled.div`
     color: white;
     font-size: 1rem;
   }
-  .login-btn {
+  .login-btn,
+  .logout-btn {
     background: transparent;
     border: transparent;
-    font-size: 1.8rem;
+    font-size: 1.6rem;
     display: flex;
     align-items: center;
     cursor: pointer;
-    margin-left: 1rem;
+    font-family: inherit;
     padding-left: 0.5rem;
   }
-  .login-icon {
+  .login-icon,
+  .logout-icon {
     padding-left: 0.3rem;
   }
 `;
