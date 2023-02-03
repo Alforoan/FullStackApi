@@ -18,21 +18,21 @@ root.render(
   <Auth0Provider
     domain="dev-mkhytkbfzkgtvzuc.us.auth0.com"
     clientId="7Tdo43MfXETURqE7o7nl1uhdA5CxQ8Bk"
-    redirectUri={window.location.origin}
+    authorizationParams={{
+      redirect_uri: window.location.origin,
+    }}
     cacheLocation="localstorage"
   >
     <UserProvider>
-      <React.StrictMode>
-        <BrowserRouter>
-          <CardsProvider>
-            <FilterProvider>
-              <CartProvider>
-                <App />
-              </CartProvider>
-            </FilterProvider>
-          </CardsProvider>
-        </BrowserRouter>
-      </React.StrictMode>
+      <BrowserRouter>
+        <CardsProvider>
+          <FilterProvider>
+            <CartProvider>
+              <App />
+            </CartProvider>
+          </FilterProvider>
+        </CardsProvider>
+      </BrowserRouter>
     </UserProvider>
   </Auth0Provider>
 );

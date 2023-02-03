@@ -28,7 +28,7 @@ function CartButtons() {
           Logout <FaUserMinus />
         </button>
       ) : (
-        <button type="button" className="login-btn">
+        <button type="button" className="login-btn" onClick={loginWithRedirect}>
           Login <FaUserPlus className="login-icon" />
         </button>
       )}
