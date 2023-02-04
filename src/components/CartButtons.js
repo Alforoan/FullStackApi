@@ -88,6 +88,9 @@ const Wrapper = styled.div`
   .logout-icon {
     padding-left: 0.3rem;
   }
+  @media screen and (max-width: 992px) {
+    font-size: 1.5rem;
+  }
 `;
 
 export default CartButtons;
