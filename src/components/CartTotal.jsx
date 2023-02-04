@@ -2,9 +2,11 @@ import React from "react";
 import { useCartContext } from "../context/cart_context";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
+import { useUserContext } from "../context/user_context";
 
 function CartTotal() {
   const { tax, total_amount } = useCartContext();
+  const { myUser, loginWithRedirect } = useUserContext();
   return (
     <Wrapper>
       <div>
@@ -20,9 +22,15 @@ function CartTotal() {
             Order total: <span>${total_amount + tax}</span>
           </h4>
         </article>
-        <Link to="/checkout" className="btn">
-          Proceed to checkout
-        </Link>
+        {myUser ? (
+          <Link to="/checkout" className="btn">
+            Proceed to checkout
+          </Link>
+        ) : (
+          <button type="button" className="btn" onClick={loginWithRedirect}>
+            Login
+          </button>
+        )}
       </div>
     </Wrapper>
   );
@@ -57,7 +65,7 @@ const Wrapper = styled.section`
   }
   .btn {
     width: 100%;
-
+    cursor: pointer;
     text-align: center;
     font-weight: 700;
     text-decoration: none;

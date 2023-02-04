@@ -5,6 +5,7 @@ function CheckoutPage() {
   return (
     <main>
       <PageHero title="Checkout" />
+      <h1>Checkout Here</h1>
     </main>
   );
 }

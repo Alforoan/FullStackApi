@@ -30,11 +30,11 @@ function CartPage() {
 }
 
 const Wrapper = styled.main`
-  height: 69vh;
   .empty {
     text-align: center;
     margin: auto;
     padding-top: 10rem;
+    height: 54vh;
   }
   h2 {
     font-size: 4rem;

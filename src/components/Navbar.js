@@ -6,9 +6,11 @@ import logo from "../images/pokemon.png";
 import CartButtons from "./CartButtons";
 import { BiMenu } from "react-icons/bi";
 import { useCardsContext } from "../context/cards_context";
+import { useUserContext } from "../context/user_context";
 
 const Navbar = () => {
   const { openSidebar } = useCardsContext();
+  const { myUser } = useUserContext();
   return (
     <NavContainer>
       <div className="nav-center">
@@ -30,9 +32,11 @@ const Navbar = () => {
             );
           })}
 
-          <li>
-            <Link to="/checkout">Checkout</Link>
-          </li>
+          {myUser && (
+            <li>
+              <Link to="/checkout">Checkout</Link>
+            </li>
+          )}
         </ul>
         <div className="cart-btn-wrapper">
           <CartButtons />

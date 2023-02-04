@@ -25,6 +25,8 @@ const Wrapper = styled.div`
 
   .amount {
     font-size: 2rem;
+
+    margin: auto;
   }
 
   .increase-btn {

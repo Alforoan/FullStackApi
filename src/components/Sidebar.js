@@ -6,10 +6,11 @@ import { links } from "../utilities/links";
 import logo from "../images/pokemon.png";
 import { useCardsContext } from "../context/cards_context";
 import { FaTimes } from "react-icons/fa";
+import { useUserContext } from "../context/user_context";
 
 function Sidebar() {
   const { isSidebarOpen, closeSidebar } = useCardsContext();
-
+  const { myUser } = useUserContext();
   return (
     <Wrapper>
       <aside
@@ -32,11 +33,13 @@ function Sidebar() {
               </li>
             );
           })}
-          <li>
-            <Link to="/checkout" onClick={closeSidebar}>
-              checkout
-            </Link>
-          </li>
+          {myUser && (
+            <li>
+              <Link to="/checkout" onClick={closeSidebar}>
+                checkout
+              </Link>
+            </li>
+          )}
         </ul>
         <div className="cart-btn-wrapper">
           <CartButtons />
