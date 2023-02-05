@@ -51,5 +51,12 @@ const Wrapper = styled.div`
       border-color: orange;
     }
   }
+  @media screen and (max-width: 800px) {
+    .loading {
+      font-size: 3rem;
+      letter-spacing: 0;
+      max-width: 250px;
+    }
+  }
 `;
 export default CardList;

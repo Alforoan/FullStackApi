@@ -21,7 +21,7 @@ const Wrapper = styled.div`
     margin: auto;
     margin-top: 2rem;
     letter-spacing: 0.15em;
-    animation: typing 3s steps(30, end), blink-caret 0.5s step-end infinite;
+    animation: typing 3s steps(40, end), blink-caret 0.5s step-end infinite;
   }
   @keyframes typing {
     from {
@@ -38,6 +38,13 @@ const Wrapper = styled.div`
     }
     50% {
       border-color: orange;
+    }
+  }
+  @media screen and (max-width: 800px) {
+    .loading {
+      font-size: 3rem;
+      letter-spacing: 0;
+      max-width: 250px;
     }
   }
 `;
