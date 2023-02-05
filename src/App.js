@@ -12,16 +12,17 @@ import Checkout from "./pages/CheckoutPage";
 import Cards from "./pages/CardsPage";
 import Cart from "./pages/CartPage";
 import PrivateRoute from "./pages/PrivateRoute";
+import AuthWrapper from "./pages/AuthWrapper";
 
 function App() {
   return (
-    <>
+    <AuthWrapper>
       <Navbar />
       <Sidebar />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<About />} />
-        <Route path="/checkout" element={<PrivateRoute />}>
+        <Route element={<PrivateRoute />}>
           <Route path="/checkout" element={<Checkout />} />
         </Route>
         <Route path="/cart" element={<Cart />} />
@@ -30,7 +31,7 @@ function App() {
         <Route exact path="/*" element={<Error />} />
       </Routes>
       <Footer />
-    </>
+    </AuthWrapper>
   );
 }
 

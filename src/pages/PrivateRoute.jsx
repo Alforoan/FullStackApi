@@ -1,25 +1,14 @@
 import React from "react";
-import { useUserContext } from "../context/user_context";
-import { Route, Navigate } from "react-router-dom";
+// import { useUserContext } from "../context/user_context";
+import { Navigate } from "react-router-dom";
+import { useAuth0 } from "@auth0/auth0-react";
+import { useCartContext } from "../context/cart_context";
+import { Outlet } from "react-router-dom";
 
-function PrivateRoute({ children, ...rest }) {
-  const { myUser } = useUserContext();
-  return (
-    <div>
-      {!myUser ? <Navigate to="/" replace={true} /> : null}
-      <h1>hello</h1>
-    </div>
-  );
+function PrivateRoute() {
+  const { user } = useAuth0();
+
+  return <div>{user ? <Outlet /> : <Navigate to="/" replace />}</div>;
 }
 
 export default PrivateRoute;
-{
-  /* <Route
-      {...rest}
-      render={() => {
-        return myUser ? children : <Navigate to="/"></Navigate>;
-      }}
-    >
-      Privatemain
-    </Route> */
-}

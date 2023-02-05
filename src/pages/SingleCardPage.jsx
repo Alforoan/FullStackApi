@@ -1,21 +1,21 @@
 import React from "react";
-import { useParams, useHistory } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import { useCardsContext } from "../context/cards_context";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
 import PageHero from "../components/PageHero";
-import Loading from "../components/Loading";
-import Error from "../components/Error";
+
 import AddtoCart from "../components/AddtoCart";
 
 const single_card_url = `https://api.pokemontcg.io/v2/cards/`;
 
-function SingleCardPage() {
+function SingleCardPage({ error }) {
   const { id } = useParams();
   const { single_card: card, FetchSingleCard } = useCardsContext();
 
   React.useEffect(() => {
     FetchSingleCard(`${single_card_url}${id}`);
+    // eslint-disable-next-line
   }, [id]);
 
   if (!card) {

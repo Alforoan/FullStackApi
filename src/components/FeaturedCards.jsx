@@ -5,6 +5,7 @@ import cards_reducer from "../reducers/cards_reducer";
 import Card from "./Card";
 import Loading from "./Loading";
 import Error from "./Error";
+import { Link } from "react-router-dom";
 
 function FeaturedCards() {
   const {
@@ -31,6 +32,9 @@ function FeaturedCards() {
           })}
         </div>
       </main>
+      <Link to="/cards" className="btn">
+        All Cards
+      </Link>
     </Wrapper>
   );
 }
@@ -47,10 +51,22 @@ const Wrapper = styled.div`
     margin: auto;
     display: grid;
   }
-
+  .card-container {
+    margin-bottom: 1rem;
+  }
   .featured-cards {
     margin-bottom: 3rem;
     font-size: 4rem;
+  }
+  .btn {
+    text-decoration: none;
+    font-size: 1.7rem;
+    background: lightgray;
+    padding: 0.4rem 1rem;
+    border-radius: 0.25rem;
+    :visited {
+      color: black;
+    }
   }
   @media (min-width: 576px) {
     .pokemon-cards {

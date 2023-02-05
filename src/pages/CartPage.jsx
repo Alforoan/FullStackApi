@@ -12,7 +12,7 @@ function CartPage() {
       <Wrapper className="container">
         <div className="empty">
           <h2>Your cart is empty</h2>
-          <Link to="/cards" className="btn" type="button">
+          <Link to="/cards" className="btn">
             Fill it
           </Link>
         </div>
