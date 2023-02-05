@@ -6,35 +6,6 @@ import {
   TOGGLE_CART_ITEM_AMOUNT,
 } from "../actions";
 
-// function cart_reducer(state, action) {
-//     const cart_reducer = (state, action) => {
-//   if (action.type === ADD_TO_CART) {
-//     const {id, amount,card} = action.payload;
-//     const tempItem = state.cart.find((i) => i.id === id );
-//     if (tempItem) {
-//         const tempCart = state.cart.map((cartItem) => {
-//         if (cartItem.id === id + color) {
-//           let newAmount = cartItem.amount + amount;
-//           if (newAmount > cartItem.max) {
-//             newAmount = cartItem.max;
-//           }
-//     } else {
-//       const newItem = {
-//         id: id,
-//         name: card.name,
-
-//         amount,
-//         image: card.images.large,
-//         price: card.cardmarket?.prices?.averageSellPrice,
-//         max: 10,
-//       };
-//       return { ...state, cart: [...state.cart, newItem] };
-//     }
-//   }
-//   return state;
-//   throw new Error(`No Matching "${action.type}" - action type`);
-// };
-
 const cart_reducer = (state, action) => {
   if (action.type === ADD_TO_CART) {
     const { id, amount, card } = action.payload;

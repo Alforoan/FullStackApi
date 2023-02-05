@@ -2,14 +2,14 @@ import React from "react";
 import styled from "styled-components";
 import { FaShoppingCart, FaUserMinus, FaUserPlus } from "react-icons/fa";
 import { Link } from "react-router-dom";
-import Sidebar from "./Sidebar";
+
 import { useCardsContext } from "../context/cards_context";
 import { useCartContext } from "../context/cart_context";
 import { useUserContext } from "../context/user_context";
 
 function CartButtons() {
   const { closeSidebar } = useCardsContext();
-  const { total_items } = useCartContext();
+  const { total_items, clearCart } = useCartContext();
   const { loginWithRedirect, myUser, logout } = useUserContext();
   return (
     <Wrapper>
@@ -24,7 +24,10 @@ function CartButtons() {
         <button
           className="logout-btn"
           type="button"
-          onClick={() => logout({ returnTo: window.location.origin })}
+          onClick={() => {
+            clearCart();
+            logout({ returnTo: window.location.origin });
+          }}
         >
           Logout <FaUserMinus className="logout-icon" />
         </button>
