@@ -12,14 +12,15 @@ function CartTotal() {
       <div>
         <article>
           <h5>
-            Subtotal: <span>${total_amount}</span>
+            Subtotal: <span>${Math.round(total_amount * 100) / 100}</span>
           </h5>
           <p>
             Tax: <span>${tax}</span>
           </p>
           <hr />
           <h4 className="order-total">
-            Order total: <span>${total_amount + tax}</span>
+            Order total:{" "}
+            <span>${Math.round((total_amount + tax) * 100) / 100}</span>
           </h4>
         </article>
         {myUser ? (

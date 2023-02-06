@@ -42,26 +42,3 @@ const Wrapper = styled.section`
 `;
 
 export default CartColumns;
-// span {
-//     margin-left: -7rem;
-//   }
-//   .content {
-//     display: flex;
-
-//     justify-content: space-between;
-//     width: 50vw;
-//     margin: auto;
-//     font-size: 2rem;
-
-//     h5 {
-//       color: var(lightgray);
-//       font-weight: 400;
-//     }
-//   }
-//   hr {
-//     margin: 2rem 0;
-//     width: 65vw;
-//     margin: auto;
-//     margin-top: 2rem;
-//     margin-bottom: 2rem;
-//   }

@@ -10,13 +10,14 @@ import {
 import axios from "axios";
 import { useCartContext } from "../context/cart_context";
 import { useUserContext } from "../context/user_context";
+import { createBrowserHistory } from "@remix-run/router";
 
 const promise = loadStripe(`${process.env.REACT_APP_STRIPE_PUBLIC_KEY}`);
 
 function CheckoutForm() {
-  const { cart, total_amount, shipping_fee, clearCart } = useCartContext();
+  const { cart, total_amount, tax, clearCart } = useCartContext();
   const { myUser } = useUserContext();
-
+  const history = createBrowserHistory();
   const [succeeded, setSucceeded] = React.useState(false);
   const [error, setError] = React.useState(null);
   const [processing, setProcessing] = React.useState("");
@@ -46,7 +47,7 @@ function CheckoutForm() {
   const createPaymentIntent = async () => {
     try {
       const data = await axios.post(
-        JSON.stringify({ cart, shipping_fee, total_amount })
+        JSON.stringify({ cart, tax, total_amount })
       );
       setClientSecret(data.clientSecret);
     } catch (error) {}
@@ -56,10 +57,49 @@ function CheckoutForm() {
     createPaymentIntent();
     // eslint-disable-next-line
   }, []);
-  const handleChange = async (event) => {};
-  const handleSubmit = async (ev) => {};
+  const handleChange = async (event) => {
+    setDisabled(event.empty);
+    setError(event.error ? event.error.message : "");
+  };
+  const handleSubmit = async (ev) => {
+    ev.preventDefault();
+    setProcessing(true);
+    const stringClientSecret = clientSecret.toString();
+    const payload = await stripe.confirmCardPayment(stringClientSecret, {
+      payment_method: {
+        card: elements.getElement(CardElement),
+      },
+    });
+    if (payload.error) {
+      setError(`Payment failed ${payload.error.message}`);
+      setProcessing(false);
+    } else {
+      setError(null);
+      setProcessing(false);
+      setSucceeded(true);
+      setTimeout(() => {
+        clearCart();
+        history.push("/");
+      }, 10000);
+    }
+  };
   return (
     <div>
+      {succeeded ? (
+        <article>
+          <h4>Thank you</h4>
+          <h4>Your payment was successful!</h4>
+          <h4>Redirect to home page shortly</h4>
+        </article>
+      ) : (
+        <article>
+          <h4>Hello, {myUser && myUser.name}</h4>
+          <p>{`Your total is $${
+            Math.round((tax + total_amount) * 100) / 100
+          }`}</p>
+          <p>Test Card Number : 4242 4242 4242 4242</p>
+        </article>
+      )}
       <form onSubmit={handleSubmit} id="payment-form">
         <CardElement
           id="card-element"
