@@ -1,6 +1,6 @@
 
 <h1 align="center">Hi 👋, I'm Jay</h1>
-<h3 align="center">A react frontend developer from United States</h3>
+<h3 align="center">A React Frontend Developer from United States</h3>
 
 - 🌱 I’m currently learning **React**
 
