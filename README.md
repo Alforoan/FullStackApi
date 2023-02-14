@@ -9,9 +9,9 @@
 
 `twitter`: [Click Here](https://twitter.com/Alforoan2050)
 
-`project_title`: Pokemon Cards
+`project_title`: FullStackApi
 
-`project_description`: Stuff
+`project_description`: User is able to add cards to the shopping cart, log in and out, filter products by different categories (price, name, type), and more.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
