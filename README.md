@@ -26,7 +26,7 @@
 
 
 * [![React][React.js]][React-url]
-* ![auth0](https://user-images.githubusercontent.com/118868270/218852209-546b51ec-ce8d-4ac7-8e28-710f4799b55a.png)
+* ![auth0](https://user-images.githubusercontent.com/118868270/218852419-22b53668-99fb-4877-a7d0-4666b1d4d665.png)
 
 
 
