@@ -13,7 +13,10 @@
 
 `project_title`: FullStackApi
 
-`project_description`: User is able to add cards to the shopping cart, log in and out, filter products by different categories (price, name, type), and more.
+`project_description`: 
+- Uses Auth0 and Stripe for Log in and payment
+- User can add products to the shopping cart and remove them
+- User can filter products by different categories
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -109,7 +112,7 @@ Distributed under the MIT License. See `LICENSE.txt` for more information.
 
 Your Name - [@Alforoan2050](https://twitter.com/Alforoan2050) 
 
-Project Link: [https://github.com/Alforoan/FullStackApi](https://github.com/Alforoan/FullStackApi)
+Project Link: [Project Link](https://alforoan-pokemoncardsfinal.netlify.app/)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -158,10 +161,3 @@ Project Link: [https://github.com/Alforoan/FullStackApi](https://github.com/Alfo
 [JQuery.com]: https://img.shields.io/badge/jQuery-0769AD?style=for-the-badge&logo=jquery&logoColor=white
 [JQuery-url]: https://jquery.com 
 
-Link of the final project: http://alforoan-pokemoncardsfinal.netlify.app
-
-About the Project
-- Uses auth0 and stripe for log in and payment respectively. 
-- Uses a public API to display cards.
-- User is able to filter out cards based on the category/type/price/name of the cards.
-- User is able to add cards to the shopping cart and remove them.
