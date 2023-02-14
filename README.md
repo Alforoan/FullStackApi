@@ -1,6 +1,6 @@
 ## About The Project
 
-[![Product Name Screen Shot][product-screenshot]]([https://ibb.co/JH5m36W])
+[![Pokemon][product-screenshot]]([https://ibb.co/JH5m36W])
 
 Here's a blank template to get started: To avoid retyping too much info. Do a search and replace with your text editor for the following: `github_username`, `repo_name`, `twitter_handle`, `linkedin_username`, `email_client`, `email`, `project_title`, `project_description`
 
@@ -33,7 +33,7 @@ This is an example of how to list things you need to use the software and how to
 
 ### Installation
 
-1. Get a free API Key [here](https://api.pokemontcg.io/v2/cards)
+1. Get a free API Key [here](https://dev.pokemontcg.io/)
 2. Clone the repo
    ```sh
    git clone https://github.com/github_username/repo_name.git
