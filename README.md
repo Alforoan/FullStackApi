@@ -4,9 +4,13 @@
  
 
 `github_username: Alforoan, 
-`repo_name`: PokemonCards,
+
+`repo_name`: FullStackApi,
+
 `twitter`: (https://twitter.com/Alforoan2050),
+
 `project_title`: Pokemon Cards,
+
 `project_description`: Stuff
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
