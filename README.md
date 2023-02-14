@@ -1,6 +1,6 @@
 ## About The Project
 
-[![Pokemon][product-screenshot]]([https://ibb.co/JH5m36W])
+![Website Link](https://github.com/[Alforoan]/[PokemonCards]/blob/[main]/image.jpg?raw=true)
 
 Here's a blank template to get started: To avoid retyping too much info. Do a search and replace with your text editor for the following: `github_username`, `repo_name`, `twitter_handle`, `linkedin_username`, `email_client`, `email`, `project_title`, `project_description`
 
