@@ -14,7 +14,7 @@
 `project_title`: FullStackApi
 
 `project_description`: 
-- Uses Auth0 and Stripe for Log in and payment
+- Uses Auth0 and Stripe for Login and payment
 - User can add products to the shopping cart and remove them
 - User can filter products by different categories
 
