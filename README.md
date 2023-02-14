@@ -26,6 +26,7 @@
 
 
 * [![React][React.js]][React-url]
+* [![Auth0][https://auth0.com/][Auth-url]
 
 
 
