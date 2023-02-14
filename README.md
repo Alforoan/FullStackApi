@@ -7,7 +7,7 @@
 
 `repo_name`: FullStackApi
 
-`twitter`: (https://twitter.com/Alforoan2050)
+`twitter`: [Click Here](https://twitter.com/Alforoan2050)
 
 `project_title`: Pokemon Cards
 
