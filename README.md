@@ -3,7 +3,7 @@
 ![pokeimgnew](https://user-images.githubusercontent.com/118868270/218839400-a05c7e72-eda5-4f33-8bfe-fab2666719a6.png)
  
 
-`github_username: Alforoan, 
+`github_username`: Alforoan, 
 
 `repo_name`: FullStackApi,
 
