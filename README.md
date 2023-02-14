@@ -1,6 +1,6 @@
 ## About The Project
 
-![Pokemon](http://ibb.co/JH5m36W/to/img.png)
+![pokeimgnew](https://user-images.githubusercontent.com/118868270/218839400-a05c7e72-eda5-4f33-8bfe-fab2666719a6.png)
  
 
 Here's a blank template to get started: To avoid retyping too much info. Do a search and replace with your text editor for the following: `github_username`, `repo_name`, `twitter_handle`, `linkedin_username`, `email_client`, `email`, `project_title`, `project_description`
