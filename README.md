@@ -26,7 +26,7 @@
 
 
 * [![React][React.js]][React-url]
-* [![Auth0][https://auth0.com/][Auth-url]
+* ![auth0](https://user-images.githubusercontent.com/118868270/218852209-546b51ec-ce8d-4ac7-8e28-710f4799b55a.png)
 
 
 
