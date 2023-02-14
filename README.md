@@ -3,10 +3,10 @@
 ![pokeimgnew](https://user-images.githubusercontent.com/118868270/218839400-a05c7e72-eda5-4f33-8bfe-fab2666719a6.png)
  
 
-`github_username: Alforoan 
-`repo_name`: PokemonCards
-`twitter`: (https://twitter.com/Alforoan)
-`project_title`: Pokemon Cards
+`github_username: Alforoan, 
+`repo_name`: PokemonCards,
+`twitter`: (https://twitter.com/Alforoan2050),
+`project_title`: Pokemon Cards,
 `project_description`: Stuff
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
