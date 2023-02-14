@@ -105,9 +105,9 @@ Distributed under the MIT License. See `LICENSE.txt` for more information.
 <!-- CONTACT -->
 ## Contact
 
-Your Name - [@twitter_handle](https://twitter.com/twitter_handle) - email@email_client.com
+Your Name - [@Alforoan2050](https://twitter.com/Alforoan2050) 
 
-Project Link: [https://github.com/github_username/repo_name](https://github.com/github_username/repo_name)
+Project Link: [https://github.com/Alforoan/FullStackApi](https://github.com/Alforoan/FullStackApi)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
