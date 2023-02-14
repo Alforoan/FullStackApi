@@ -121,9 +121,7 @@ Project Link: [Project Link](https://alforoan-pokemoncardsfinal.netlify.app/)
 <!-- ACKNOWLEDGMENTS -->
 ## Acknowledgments
 
-* []()
-* []()
-* []()
+
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
